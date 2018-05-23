@@ -19,23 +19,28 @@ public class StreichhölzerProjekt {
 	endwhile   
 	end   */
       int i=(int)(Math.random()*100+5);
-      /*zufallszahl von 5-100 programmiert
-      für die anfangszahl der streichhölzer
+      /*Zufallszahl von 5-100 programmiert
+      für die Anfangszahl der Streichhölzer
       */
         System.out.println(i);
       
        if (i%4==1){
            int k=(int)(Math.random()*3+1);
-       System.out.println(k);} 
+           System.out.println(k+"Ich stand auf einem Nein-Feld");
+       } //es ist egal was der Computer jetzt macht, denn er hat eh verloren
        else{
            int m=i%4;
-           int k=m-1;
-           /*z ist die anzahl der hölzer die der computer wegnehmen muss
-           m ist der rest der übrig bleibt wenn man durch 4 teilt 
+           if (m==2) {
+               int k=(int)(Math.random()*3+2);
+           }
+           //int k=m-1;
+           /*k ist die Anzahl der Hölzer die der Computer wegnehmen muss
+           m ist der Rest der übrig bleibt, wenn man durch 4 teilt,
+           m kann nur 2, 3 oder 4 sein
            */
-           System.out.println(k);
+           System.out.println(k+"Ich kann gewinnen");
        }
-       /* computer muss nach obigen bedingungen die anzahl der streichhölzer 
+       /* computer muss nach obigen Bedingungen die Anzahl der Streichhölzer 
        abziehen
        */
         
