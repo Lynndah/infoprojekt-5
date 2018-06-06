@@ -24,7 +24,10 @@ public class StreichhölzerProjekt {
       */
         System.out.println(i);
       //Spieler 1 fängt immer an
-      while(i>3){
+      
+        
+        if (i%4!=1) {
+           while(i>3){
        if (i%4==1){
            int k=(int)(Math.random()*3+1);
            System.out.println(k+" Ich stand auf einem Nein-Feld");
@@ -68,16 +71,15 @@ public class StreichhölzerProjekt {
         else if (i==1) {
             int k=1;
             i=i-k;
-            System.out.println("Ich bin der 1. Spieler und habe verloren.");
+        } 
+            System.out.println("Ich bin der 2. Spieler und habe verloren.");
         }
-       /* computer muss nach obigen Bedingungen die Anzahl der Streichhölzer 
-       abziehen
-       */
-       while(i>3){
-        if (i%4==1){
-           int a=(int)(Math.random()*3+1);
-           System.out.println(a+"Ich stand auf einem Nein-Feld");
-           i=i-a;
+        else{
+            while(i>3){
+       if (i%4==1){
+           int k=(int)(Math.random()*3+1);
+           System.out.println(k+" Ich stand auf einem Nein-Feld");
+           i=i-k; //neues i nachdem Spieler 1 gespielt hat
        
        } //es ist egal was der Computer jetzt macht, denn er hat eh verloren
        
@@ -85,43 +87,52 @@ public class StreichhölzerProjekt {
            int m=i%4;
            //m kann 0, 2 oder 3 sein
            if (m==0) {
-               int a=3;
-               i=i-a;
-               System.out.println(a+" Ich kann gewinnen");
-
+               int k=3;
+              i=i-k;
+               System.out.println(k+" Ich kann gewinnen");
            } // wenn der Rest gleich 0 ist, müssen 3 Streichhölzer weggenommen werden
            else if (m==2) {
-               int a=1;
-               i=i-a;
-               System.out.println(a+" Ich kann gewinnen");
-
+               int k=1;
+               i=i-k;
+                System.out.println(k+" Ich kann gewinnen");
            } // wenn der Rest gleich 2 ist, muss 1 Streichholz weggenommen werden
            else if (m==3) {
-               int a=2;
-               i=i-a;
-               System.out.println(a+" Ich kann gewinnen");
-           } 
+               int k=2;
+               i=i-k;
+                System.out.println(k+" Ich kann gewinnen");
+           } //wenn der Rest gleich 3 ist, müssen 2 Streichhölzer weggenommen werden
+           /*Folge: Gegenspieler ist auf einem Nein-Feld,
+           ab hier braucht Computer nur noch Folgendes machen*/
+
+          
+       }
+      }
+       if (i==3) {
+            int k=2;
+            i=i-k;
+            
         }
+        else if (i==2) {
+            int k=1;
+            i=i-k;
+        }
+        else if (i==1) {
+            int k=1;
+            i=i-k;
+        }
+            System.out.println("Ich bin der 1.Spieler und habe verloren.");
+        }
+       /* computer muss nach obigen Bedingungen die Anzahl der Streichhölzer 
+       abziehen
+       */
         
 //wenn der Rest gleich 3 ist, müssen 2 Streichhölzer weggenommen werden
            /*Folge: Gegenspieler ist auf einem Nein-Feld,
            ab hier braucht Computer nur noch Folgendes machen*/
            
            
-       }
-        if (i==3) {
-            int a=2;
-            i=i-a;
-        }
-        else if (i==2) {
-            int a=1;
-            i=i-a;
-        }
-        else if (i==1) {
-            int a=1;
-            i=i-a;
-            System.out.println("Ich bin der 2. Spieler und habe verloren.");
-        }
+      
+
        //Spiel ist beendet
        
        
